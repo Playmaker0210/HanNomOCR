@@ -1,0 +1,6 @@
+path: /kaggle/input/truedata/best_data
+train: /kaggle/input/truedata/best_data/train/images
+val: /kaggle/input/truedata/best_data/valid/images
+
+nc: 1
+names: ['c']
