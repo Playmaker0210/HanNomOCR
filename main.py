@@ -76,6 +76,9 @@ if __name__ == "__main__":
     input_folder = sys.argv[1]
     label_folder = sys.argv[2]
 
+    #input_folder = "image_data\\val\\images"
+    #label_folder = "image_data\\val\\labels"
+
     start_time = time.time()
     detector = HanNomOCR(20)
     init_time = time.time() - start_time
