@@ -72,12 +72,8 @@ def get_predict(outputs):
     return np.array(predicts)
 
 if __name__ == "__main__":
-
-    input_folder = sys.argv[1]
-    label_folder = sys.argv[2]
-
-    #input_folder = "image_data\\val\\images"
-    #label_folder = "image_data\\val\\labels"
+    input_folder = "image_data\\val\\images"
+    label_folder = "image_data\\val\\labels"
 
     start_time = time.time()
     detector = HanNomOCR(20)
@@ -106,9 +102,6 @@ if __name__ == "__main__":
         metric_fn = MetricBuilder.build_evaluation_metric("map_2d", async_mode=True, num_classes=1)
         metric_fn.add(preds, targets)
         score = metric_fn.value(iou_thresholds=np.arange(0.5, 0.75, 0.05))['mAP']
-        #for t in range(50, 76, 5):
-        #    scores += [map_score(list_outputs, targets, 0.01*t)]
-
         img_score += [score]
 
     run_time = time.time() - start_time

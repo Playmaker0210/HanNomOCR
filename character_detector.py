@@ -106,8 +106,8 @@ class HanNomOCR:
             y1 = ans[1]
             width = ans[2]
             height = ans[3]
-            #cv2.rectangle(input_image, (int(x1 - width/2), int(y1 - height/2)),
-            #(int(x1 + width/2), int(y1 + height/2)), (0, 0, 255), 1)
+            cv2.rectangle(input_image, (int(x1 - width/2), int(y1 - height/2)),
+            (int(x1 + width/2), int(y1 + height/2)), (0, 0, 255), 1)
             dup_boxes.pop(0)
             deleted = 1
             for j in indices:
@@ -115,10 +115,10 @@ class HanNomOCR:
                 deleted += 1
             result.append(np.array([1, int(x1), int(y1), int(width), int(height)]))
             #cnt += 1
-        #print(cnt)
-        #cv2.imshow("RESULT", input_image)
-        #cv2.waitKey(0)
-        #cv2.destroyAllWindows()
+        print(cnt)
+        cv2.imshow("RESULT", input_image)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
         return np.array(result)
 
     def detect(self, img):
